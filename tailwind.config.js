@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#2563EB',
-        secondary: '#1F2937',
-        accent: '#F97316',
+        primary: '#DC2626', // Vermelho
+        secondary: '#000000', // Preto
+        accent: '#B91C1C',   // Vermelho escuro
         background: {
-          light: '#F9FAFB',
+          light: '#FEF2F2', // Vermelho muito claro
           white: '#FFFFFF'
         }
       },

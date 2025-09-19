@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-secondary py-12 px-6 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
-          <span className="text-xl font-bold gradient-text mb-6">Miguel Wilker</span>
+          <span className="text-xl font-bold gradient-text mb-6">MIGUEL WILKER</span>
           
           <p className="mb-6">© 2023 Michelle Marcondes. Todos os direitos reservados.</p>
           

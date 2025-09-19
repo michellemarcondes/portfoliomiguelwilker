@@ -1,9 +1,9 @@
 {
-  "name": "portfolio-ryan",
+  "name": "portfolio-miguel",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://seuusuario.github.io/portfolio-ryan",
+  "homepage": "https://michellemarcondes.github.io/portfoliomiguelwilker",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
