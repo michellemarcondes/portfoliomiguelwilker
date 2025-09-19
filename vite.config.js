@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/portfoliomiguelwilker/',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    assetsDir: 'assets'
   }
 })
