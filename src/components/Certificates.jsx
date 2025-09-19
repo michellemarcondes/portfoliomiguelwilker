@@ -48,7 +48,7 @@ const Certificates = () => {
                   {/* Container com altura fixa e imagem contida */}
                   <div className="w-full h-64 flex items-center justify-center p-4">
                     <img 
-                      src={`/${certificate.image}`} 
+                      src={certificate.image} 
                       alt={certificate.title} 
                       className="max-h-full max-w-full object-contain" 
                     />

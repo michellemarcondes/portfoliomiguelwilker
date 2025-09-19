@@ -47,7 +47,7 @@ const Projects = () => {
               <div key={project.id} className="swiper-slide">
                 <div className="project-item rounded-lg overflow-hidden shadow-md relative group hover:shadow-xl transition-shadow duration-300">
                   <img 
-                    src={`/${project.image}`} 
+                    src={project.image} 
                     alt={project.title} 
                     className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
