@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #F9FAFB, #FFFFFF);
+  color: #1F2937;
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #2563EB, #1E40AF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-connector {
+  position: absolute;
+  left: 23px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background-color: #E5E7EB;
+}
+
+.certificate-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2563EB !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #2563EB !important;
+}
