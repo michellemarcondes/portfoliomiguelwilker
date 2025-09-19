@@ -45,7 +45,7 @@ const Projects = () => {
           <div className="swiper-wrapper">
             {projects.map(project => (
               <div key={project.id} className="swiper-slide">
-                <div className="project-item rounded-lg overflow-hidden shadow-md relative group">
+                <div className="project-item rounded-lg overflow-hidden shadow-md relative group hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src={`/${project.image}`} 
                     alt={project.title} 

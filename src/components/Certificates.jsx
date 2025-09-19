@@ -44,7 +44,7 @@ const Certificates = () => {
           <div className="swiper-wrapper">
             {certificates.map(certificate => (
               <div key={certificate.id} className="swiper-slide">
-                <div className="bg-white rounded-lg overflow-hidden certificate-shadow animate-fade-in mx-4 flex flex-col">
+                <div className="bg-white rounded-lg overflow-hidden certificate-shadow animate-fade-in mx-4 flex flex-col hover:scale-105 transition-transform duration-300 hover:shadow-xl">
                   {/* Container com altura fixa e imagem contida */}
                   <div className="w-full h-64 flex items-center justify-center p-4">
                     <img 

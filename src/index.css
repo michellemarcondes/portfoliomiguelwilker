@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #DC2626;
+  --primary-dark: #B91C1C;
+  --secondary-color: #6B7280;
+  --accent-color: #F59E0B;
+  --background-light: #F9FAFB;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,29 +22,51 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #FEF2F2, #FFFFFF);
-  color: #000000;
+  background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 50%, #F3F4F6 100%);
+  color: var(--text-primary);
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(220, 38, 38, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #DC2626, #B91C1C);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header-shadow {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px var(--shadow-light);
 }
 
 .certificate-shadow {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px -5px var(--shadow-medium);
+}
+
+.project-shadow {
+  box-shadow: 0 8px 32px var(--shadow-medium);
 }
 
 .project-overlay {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(220, 38, 38, 0.3));
 }
 
 .project-item:hover .project-overlay {
@@ -39,35 +74,100 @@ body {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #DC2626 !important;
+  background-color: var(--primary-color) !important;
 }
 
 .swiper-button-next, .swiper-button-prev {
-  color: #DC2626 !important;
+  color: var(--primary-color) !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  transform: scale(1.1);
+  color: var(--primary-dark) !important;
 }
 
 .section-title {
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
-.section-title:after {
+.section-title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50%;
-  height: 3px;
-  background: linear-gradient(90deg, #DC2626, #B91C1C);
-  border-radius: 3px;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+  width: 80%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
 }
